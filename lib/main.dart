@@ -46,7 +46,11 @@ class HnListWidget extends StatefulWidget {
 class _HnListWidgetState extends State<HnListWidget> {
   HnService hnService = new HnService();
 
-  _launchUrl(url) async {
+  _launchUrl(url) {
+    launchUrl(url);
+  }
+
+  launchUrl(url) async {
     if (await canLaunch(url)) {
       await launch(url);
     } else {
